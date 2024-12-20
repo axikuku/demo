@@ -1,0 +1,22 @@
+[package]
+name = "demo"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ffmpeg-next = "7.1.0"
+iced = { version = "0.13.1", default-features = false, features = ["tiny-skia", "tokio"] }
+sdl2 = "0.37.0"
+tokio = { version = "1.42.0", features = ["macros", "rt"] }
+
+[profile.dev]
+opt-level = 0
+debug = false
+strip = true
+debug-assertions = false
+overflow-checks = true
+lto = false
+panic = 'unwind'
+incremental = true
+codegen-units = 256
+rpath = false
